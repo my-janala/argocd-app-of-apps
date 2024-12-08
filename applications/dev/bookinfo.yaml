@@ -18,6 +18,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    # Enable namespace auto-creation
-    syncOptions:
-      - CreateNamespace=true
