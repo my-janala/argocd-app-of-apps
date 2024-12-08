@@ -57,6 +57,6 @@ app1-code/*.exe
 app1-code/*.out
 
 # Ignore generated YAML files for specific environments
-applications/dev/*.yaml
-applications/staging/*.yaml
-applications/prod/*.yaml
+#applications/dev/*.yaml
+#applications/staging/*.yaml
+#applications/prod/*.yaml
