@@ -7,18 +7,12 @@ spec:
   project: bookinfo-dev
   source:
     repoURL: https://github.com/my-janala/argocd-app-of-apps.git
-    targetRevision: HEAD
-    path: helm-charts/bookinfo
+    targetRevision: main
+    path: helm-charts/bookinfo/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: bookinfo-dev
-  helm:
-    parameters:
-      - name: productpage.replicaCount
-        value: "1"
-      - name: details.replicaCount
-        value: "1"
-      - name: reviews.replicaCount
-        value: "1"
-      - name: ratings.replicaCount
-        value: "1"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
