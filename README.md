@@ -9,7 +9,7 @@ ArgoCD-App-of-Apps.
 ### Repo Structure 
 
 ```angular2html
-my-argo-repo/
+argocd-app-of-apps/
 ├── helm-charts/
 │   └── bookinfo/
 │       ├── Chart.yaml
