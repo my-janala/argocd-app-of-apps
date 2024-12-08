@@ -180,7 +180,6 @@ TYPE  NAME  REPO                                                 INSECURE  OCI  
 git         https://github.com/my-janala/argocd-app-of-apps.git  false     false  false  false  Successful 
 ```
 
-
 - Apply the root-app.yaml: Deploy the bootstrap application to Argo CD:
 
 `kubectl apply -f bootstrap/root-app.yaml`
