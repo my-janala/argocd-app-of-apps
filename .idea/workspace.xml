@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b92646-c7de-41be-a9ac-e5a015d3f40d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/dev/values-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/prod/values-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/staging/values-staging.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/root-app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/root-app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/details-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/details-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/productpage-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/productpage-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/ratings-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/ratings-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/reviews-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/reviews-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/dev/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/dev/bookinfo-project.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/prod/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/prod/bookinfo-project.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/staging/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/staging/bookinfo-project.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="20b92646-c7de-41be-a9ac-e5a015d3f40d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,13 +13,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2pvtsAVBIv9jX94OXllGS9l643B" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,7 +31,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/mezbaurrahman/IdeaProjects/capgemini/platform_engineering/projects/cis-cnk8s/sub-projects/gitops/argocd-app-of-apps",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

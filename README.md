@@ -4,7 +4,9 @@
 ## Name
 ArgoCD-App-of-Apps.
 
-## Repo Structure 
+## Description
+
+### Repo Structure 
 
 ```angular2html
 my-argo-repo/
@@ -43,9 +45,6 @@ my-argo-repo/
     └── root-app.yaml
 
 ```
-
-## Description
-
 
 ## Roadmap
 If you have ideas for releases in the future, it is a good idea to list them in the README.
