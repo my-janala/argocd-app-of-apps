@@ -155,7 +155,7 @@ argocd login $ARGOCD_SERVER --username admin --password $ARGOCD_PWD --insecure
 Context 'a6417a9f9c6284aa5b17c9ddbd169ef1-1446815091.us-west-2.elb.amazonaws.com' updated
 ```
 
-## Initial Setup 
+## Apply the App of Apps Configuration
 
 - Push the repository to GitHub: Ensure all files are pushed to your GitHub repository:
 
@@ -187,6 +187,22 @@ git         https://github.com/my-janala/argocd-app-of-apps.git  false     false
 - Monitor the Sync: Visit the Argo CD UI or use the CLI to monitor the status of the application:
 
 `argocd app list`
+
+## Verify Applications
+
+- In the Argo CD UI:
+
+Navigate to the root-app application and ensure all child applications are deployed successfully.
+
+- Verify on the Cluster
+
+- Check that the resources are created in the correct namespaces:
+
+
+
+
+
+
 
 
 ## ArgoCD App-of-Apps Description
