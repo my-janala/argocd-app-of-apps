@@ -1,5 +1,37 @@
 # argocd-app-of-apps
 
+Repo Structure 
+
+`my-argo-repo/
+├── README.md
+├── projects/
+│   ├── dev/
+│   │   ├── bookinfo-project.yaml
+│   ├── staging/
+│   │   ├── bookinfo-project.yaml
+│   └── prod/
+│       ├── bookinfo-project.yaml
+├── applications/
+│   ├── dev/
+│   │   ├── bookinfo.yaml
+│   ├── staging/
+│   │   ├── bookinfo.yaml
+│   └── prod/
+│       ├── bookinfo.yaml
+├── helm-charts/
+│   └── bookinfo/
+│       ├── Chart.yaml
+│       ├── templates/
+│       │   ├── productpage-deployment.yaml
+│       │   ├── details-deployment.yaml
+│       │   ├── reviews-deployment.yaml
+│       │   ├── ratings-deployment.yaml
+│       │   ├── service.yaml
+│       └── values.yaml
+└── bootstrap/
+    └── root-app.yaml`
+
+
 
 
 ## Getting started
