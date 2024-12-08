@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details
+  labels:
+    app: bookinfo
+    service: details
+spec:
+  replicas: {{ .Values.details.replicaCount }}
+  selector:
+    matchLabels:
+      app: bookinfo
+      service: details
+  template:
+    metadata:
+      labels:
+        app: bookinfo
+        service: details
+    spec:
+      containers:
+      - name: details
+        image: {{ .Values.details.image.repository }}:{{ .Values.details.image.tag }}
+        ports:
+        - containerPort: 9080

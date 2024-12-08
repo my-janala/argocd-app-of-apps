@@ -2,22 +2,8 @@
 
 Repo Structure 
 
-`my-argo-repo/
-├── README.md
-├── projects/
-│   ├── dev/
-│   │   ├── bookinfo-project.yaml
-│   ├── staging/
-│   │   ├── bookinfo-project.yaml
-│   └── prod/
-│       ├── bookinfo-project.yaml
-├── applications/
-│   ├── dev/
-│   │   ├── bookinfo.yaml
-│   ├── staging/
-│   │   ├── bookinfo.yaml
-│   └── prod/
-│       ├── bookinfo.yaml
+```angular2html
+my-argo-repo/
 ├── helm-charts/
 │   └── bookinfo/
 │       ├── Chart.yaml
@@ -28,8 +14,31 @@ Repo Structure
 │       │   ├── ratings-deployment.yaml
 │       │   ├── service.yaml
 │       └── values.yaml
+│       └── overlays/
+│           ├── dev/
+│           │   └── values-dev.yaml
+│           ├── staging/
+│           │   └── values-staging.yaml
+│           └── prod/
+│               └── values-prod.yaml
+├── projects/
+│   ├── dev/
+│   │   └── bookinfo-project.yaml
+│   ├── staging/
+│   │   └── bookinfo-project.yaml
+│   └── prod/
+│       └── bookinfo-project.yaml
+├── applications/
+│   ├── dev/
+│   │   └── bookinfo.yaml
+│   ├── staging/
+│   │   └── bookinfo.yaml
+│   └── prod/
+│       └── bookinfo.yaml
 └── bootstrap/
-    └── root-app.yaml`
+    └── root-app.yaml
+
+```
 
 
 

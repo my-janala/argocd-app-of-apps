@@ -1,28 +1,28 @@
 productpage:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: istio/examples-bookinfo-productpage
-    tag: 1.16.2
+    tag: 1.16.2-staging
 
 details:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: istio/examples-bookinfo-details
-    tag: 1.16.2
+    tag: 1.16.2-staging
 
 reviews:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: istio/examples-bookinfo-reviews
-    tag: 1.16.2
+    tag: 1.16.2-staging
 
 ratings:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: istio/examples-bookinfo-ratings
-    tag: 1.16.2
+    tag: 1.16.2-staging
 
 service:
-  name: bookinfo
+  name: bookinfo-staging
   port: 9080
   targetPort: 9080

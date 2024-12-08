@@ -5,24 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20b92646-c7de-41be-a9ac-e5a015d3f40d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/argocd-app-of-apps.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/Chart.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/details-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/productpage-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/ratings-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/reviews-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/values.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/dev/bookinfo-project.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/prod/bookinfo-project.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/staging/bookinfo-project.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/dev/values-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/prod/values-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm-charts/bookinfo/overlays/staging/values-staging.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/root-app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/root-app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/details-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/details-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/productpage-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/productpage-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/ratings-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/ratings-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/reviews-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/reviews-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/templates/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/templates/service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/bookinfo/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm-charts/bookinfo/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/dev/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/dev/bookinfo-project.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/prod/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/prod/bookinfo-project.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/staging/bookinfo-project.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/staging/bookinfo-project.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
 }]]></component>
@@ -46,7 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/Users/mezbaurrahman/IdeaProjects/capgemini/platform_engineering/projects/cis-cnk8s/sub-projects/gitops/argocd-app-of-apps",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733658581106</updated>
-      <workItem from="1733658582194" duration="627000" />
+      <workItem from="1733658582194" duration="2450000" />
     </task>
     <servers />
   </component>

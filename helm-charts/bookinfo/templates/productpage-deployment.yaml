@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productpage
+  labels:
+    app: bookinfo
+    service: productpage
+spec:
+  replicas: {{ .Values.productpage.replicaCount }}
+  selector:
+    matchLabels:
+      app: bookinfo
+      service: productpage
+  template:
+    metadata:
+      labels:
+        app: bookinfo
+        service: productpage
+    spec:
+      containers:
+      - name: productpage
+        image: {{ .Values.productpage.image.repository }}:{{ .Values.productpage.image.tag }}
+        ports:
+        - containerPort: 9080
