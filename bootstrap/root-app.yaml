@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/my-janala/argocd-app-of-apps.git
-    targetRevision: HEAD
+    targetRevision: main
     path: applications
   destination:
     server: https://kubernetes.default.svc
