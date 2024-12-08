@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: bookinfo-staging
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/namespace: bookinfo-staging
 spec:
   project: bookinfo-staging
   source:
