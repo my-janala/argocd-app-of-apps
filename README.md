@@ -201,10 +201,6 @@ Navigate to the root-app application and ensure all child applications are deplo
 
 
 
-
-
-
-
 ## ArgoCD App-of-Apps Description
 
 
