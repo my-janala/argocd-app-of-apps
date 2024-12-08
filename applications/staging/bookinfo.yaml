@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bookinfo-dev
+  name: bookinfo-staging
   namespace: argocd
 spec:
-  project: bookinfo-dev
+  project: bookinfo-staging
   source:
     repoURL: https://github.com/my-janala/argocd-app-of-apps.git
     targetRevision: main
-    path: helm-charts/bookinfo/overlays/dev
+    path: helm-charts/bookinfo/overlays/staging
   destination:
     server: https://kubernetes.default.svc
-    namespace: bookinfo-dev
+    namespace: bookinfo-staging
   syncPolicy:
     automated:
       prune: true
