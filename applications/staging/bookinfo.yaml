@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: bookinfo-staging
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/namespace: bookinfo-staging
 spec:
   project: bookinfo-staging
   source:
@@ -18,3 +16,9 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  hooks:
+    - name: create-namespace
+      kind: Namespace
+      apiVersion: v1
+      metadata:
+        name: bookinfo-staging
