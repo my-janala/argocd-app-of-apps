@@ -16,9 +16,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  hooks:
-    - name: create-namespace
-      kind: Namespace
-      apiVersion: v1
-      metadata:
-        name: bookinfo-staging
+  syncOptions:
+    - CreateNamespace=true

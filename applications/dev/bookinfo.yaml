@@ -18,9 +18,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  hooks:
-    - name: create-namespace
-      kind: Namespace
-      apiVersion: v1
-      metadata:
-        name: bookinfo-dev
+    # Enable namespace auto-creation
+    syncOptions:
+      - CreateNamespace=true
