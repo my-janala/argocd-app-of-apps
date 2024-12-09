@@ -10,7 +10,7 @@ ArgoCD-App-of-Apps.
 
 ### Deploying the EKS cluster
 
-Set the env variables
+- Set the env variables
 
 ```
 export AWS_ACCESS_KEY_ID=""
@@ -27,10 +27,11 @@ Based on this [configuration](./cluster/cluster.yaml) _eksctl_ will:
 * Configure the VPC CNI to use prefix delegation
 
 Apply the configuration file like so:
-```
-export EKS_CLUSTER_NAME=eks-workshop
 
-curl -fsSL https://raw.githubusercontent.com/aws-samples/eks-workshop-v2/stable/cluster/eksctl/cluster.yaml | \
+```
+$ export EKS_CLUSTER_NAME=eks-workshop
+
+$ curl -fsSL https://raw.githubusercontent.com/aws-samples/eks-workshop-v2/stable/cluster/eksctl/cluster.yaml | \
 envsubst | eksctl create cluster -f -
 ```
 
@@ -52,6 +53,8 @@ Once the cluster deployment is complete, we should receive an output like the fo
 2024-12-08 14:25:57 [✔]  EKS cluster "eks-workshop" in "us-west-2" region is ready
 ```
 
+- Check cluster status 
+
 ```
 $ kubectl get svc 
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
@@ -65,7 +68,8 @@ ip-10-42-119-218.us-west-2.compute.internal   Ready    <none>   2m50s   v1.30.0-
 ip-10-42-142-75.us-west-2.compute.internal    Ready    <none>   2m49s   v1.30.0-eks-036c24b
 ip-10-42-165-161.us-west-2.compute.internal   Ready    <none>   2m51s   v1.30.0-eks-036c24b
 ```
-Next delete the cluster with eksctl:
+
+You can use the following command to delete the cluster with _eksctl_:
 
 `eksctl delete cluster $EKS_CLUSTER_NAME --wait`
 
@@ -73,8 +77,11 @@ Next delete the cluster with eksctl:
 
 `helm repo add argo-cd https://argoproj.github.io/argo-helm`
 
+`helm repo update `
+
+
 ```
-helm upgrade --install argocd argo-cd/argo-cd --version "${ARGOCD_CHART_VERSION}" \
+helm upgrade --install argocd argo-cd/argo-cd --version "7.7.7" \
   --namespace "argocd" --create-namespace \
   --values ~/automation/gitops/argocd/values.yaml \
   --wait
@@ -122,7 +129,9 @@ The load balancer will take some time to provision so use this command to wait u
 curl --head -X GET --retry 20 --retry-all-errors --retry-delay 15 \
   --connect-timeout 5 --max-time 10 -k \
   https://$ARGOCD_SERVER
-  
+```
+
+```
 HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Content-Length: 788
