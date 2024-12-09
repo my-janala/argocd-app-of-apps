@@ -1,7 +1,57 @@
-# argocd-app-of-apps
+# ArgoCD-App-of-Apps
 
-## Name
-ArgoCD-App-of-Apps.
+The Argo CD App of Apps model is a GitOps pattern that allows you to manage multiple applications using a single "parent" application. This parent application defines and deploys other "child" applications, making it easier to organize, scale, and control complex deployments.
+
+## Key Features
+
+### Parent Application (Root App)
+
+- Acts as the central controller.
+- Points to a directory (or repository) containing definitions of child applications.
+
+### Child Applications
+
+* Represent individual workloads or services.
+* Each child application can manage its own set of Kubernetes manifests, Helm charts, or Kustomize configurations.
+
+### Hierarchical Management
+
+* The root application manages the child applications, while each child manages specific resources.
+
+### Scalability
+
+New applications can be added by simply updating the parent application configuration.
+
+## Example
+
+* Root Application: Deploys all the child applications by pointing to a directory containing child app definitions.
+* Child Applications: Deploy and manage resources like Deployments, Services, and ConfigMaps in their respective namespaces.
+
+
+### Repo Structure 
+
+```angular2html
+argocd-app-of-apps/
+├── bootstrap/
+│   └── root-app.yaml
+├── applications/
+│   ├── app1.yaml
+│   ├── app2.yaml
+│   └── app3.yaml
+└── manifests/
+    ├── app1/
+    │   ├── namespace.yaml
+    │   ├── deployment.yaml
+    │   └── service.yaml
+    ├── app2/
+    │   ├── namespace.yaml
+    │   ├── deployment.yaml
+    │   └── service.yaml
+    └── app3/
+        ├── namespace.yaml
+        ├── deployment.yaml
+        └── service.yaml
+```
 
 ## Prerequisites
 - EKS Cluster: Ensure your EKS cluster is running and configured with kubectl.
@@ -87,6 +137,7 @@ helm upgrade --install argocd argo-cd/argo-cd --version "7.7.7" \
   --wait
 ```
 
+```
 Release "argocd" does not exist. Installing it now.
 NAME: argocd
 LAST DEPLOYED: Sun Dec  8 14:32:21 2024
@@ -104,7 +155,7 @@ In order to access the server UI you have the following options:
 2. enable ingress in the values file `server.ingress.enabled` and either
       - Add the annotation for ssl passthrough: https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/#option-1-ssl-passthrough
       - Set the `configs.params."server.insecure"` in the values file and terminate SSL at your ingress: https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/#option-2-multiple-ingress-objects-and-hosts
-
+```
 
 After reaching the UI the first time you can login with username: admin and the random password generated during the installation. You can find the password by running:
 
@@ -189,73 +240,51 @@ TYPE  NAME  REPO                                                 INSECURE  OCI  
 git         https://github.com/my-janala/argocd-app-of-apps.git  false     false  false  false  Successful 
 ```
 
-- Apply the root-app.yaml: Deploy the bootstrap application to Argo CD:
+- **Bootstrap Application Sync**: Apply and sync the bootstrap application:
 
-`kubectl apply -f bootstrap/root-app.yaml`
+```
+kubectl apply -f bootstrap/root-app.yaml
+argocd app sync root-app
+```
 
-- Monitor the Sync: Visit the Argo CD UI or use the CLI to monitor the status of the application:
-
-`argocd app list`
-
-## Verify Applications
-
-- In the Argo CD UI:
-
-Navigate to the root-app application and ensure all child applications are deployed successfully.
-
-- Verify on the Cluster
-
-- Check that the resources are created in the correct namespaces:
-
-
-
-
-## ArgoCD App-of-Apps Description
-
-
-### Repo Structure 
+- **Child Applications Status:** Check the status of each child application:
 
 ```angular2html
-argocd-app-of-apps/
-├── helm-charts/
-│   └── bookinfo/
-│       ├── Chart.yaml
-│       ├── templates/
-│       │   ├── productpage-deployment.yaml
-│       │   ├── details-deployment.yaml
-│       │   ├── reviews-deployment.yaml
-│       │   ├── ratings-deployment.yaml
-│       │   ├── service.yaml
-│       └── values.yaml
-│       └── overlays/
-│           ├── dev/
-│           │   └── values-dev.yaml
-│           ├── staging/
-│           │   └── values-staging.yaml
-│           └── prod/
-│               └── values-prod.yaml
-├── projects/
-│   ├── dev/
-│   │   └── bookinfo-project.yaml
-│   ├── staging/
-│   │   └── bookinfo-project.yaml
-│   └── prod/
-│       └── bookinfo-project.yaml
-├── applications/
-│   ├── dev/
-│   │   └── bookinfo.yaml
-│   ├── staging/
-│   │   └── bookinfo.yaml
-│   └── prod/
-│       └── bookinfo.yaml
-└── bootstrap/
-    └── root-app.yaml
+$ argocd app list
+NAME      CLUSTER                         NAMESPACE  PROJECT  STATUS  HEALTH   SYNCPOLICY  CONDITIONS  REPO                                                 PATH            TARGET
+app1      https://kubernetes.default.svc  app1       default  Synced  Healthy  Auto-Prune  <none>      https://github.com/my-janala/argocd-app-of-apps.git  manifests/app1  feature/argocd-app-of-apps
+app2      https://kubernetes.default.svc  app2       default  Synced  Healthy  Auto-Prune  <none>      https://github.com/my-janala/argocd-app-of-apps.git  manifests/app2  feature/argocd-app-of-apps
+app3      https://kubernetes.default.svc  app3       default  Synced  Healthy  Auto-Prune  <none>      https://github.com/my-janala/argocd-app-of-apps.git  manifests/app3  feature/argocd-app-of-apps
+root-app  https://kubernetes.default.svc  argocd     default  Synced  Healthy  Auto-Prune  <none>      https://github.com/my-janala/argocd-app-of-apps.git  applications    feature/argocd-app-of-apps
 
 ```
 
+- **Namespace Verification**: Ensure each namespace is created:
+
+
+```commandline
+$ kubectl get namespaces
+NAME              STATUS   AGE
+app1              Active   81m
+app2              Active   81m
+app3              Active   81m
+argocd            Active   141m
+default           Active   167m
+kube-node-lease   Active   167m
+kube-public       Active   167m
+kube-system       Active   167m
+```
+
+- **Resource Deployment:** Verify that resources are deployed within their respective namespaces:
+
+```
+kubectl get all -n app1
+kubectl get all -n app2
+kubectl get all -n app3
+```
+
+
 ## Roadmap
-
-
 
 
 ## Project status
