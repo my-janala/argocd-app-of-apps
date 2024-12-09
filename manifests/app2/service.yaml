@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app2
+  namespace: app2-dev
 spec:
   selector:
     app: app2

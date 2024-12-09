@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: staging
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/my-janala/*
+  destinations:
+    - namespace: app1-staging
+      server: https://kubernetes.default.svc
+    - namespace: app2-staging
+      server: https://kubernetes.default.svc
+    - namespace: app3-staging
+      server: https://kubernetes.default.svc
+  description: stagingelopment environment

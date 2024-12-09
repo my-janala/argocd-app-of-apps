@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: app3-dev
   namespace: argocd
 spec:
-  project: default
+  project: dev
   source:
     repoURL: https://github.com/my-janala/argocd-app-of-apps.git
-    targetRevision: feature/argocd-app-of-apps-multi-env
-    path: environments
+    targetRevision: HEAD
+    path: manifests/app3
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: app3-dev
   syncPolicy:
     automated:
       prune: true

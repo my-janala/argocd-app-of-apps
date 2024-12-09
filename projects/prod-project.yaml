@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: prod
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/my-janala/*
+  destinations:
+    - namespace: app1-prod
+      server: https://kubernetes.default.svc
+    - namespace: app2-prod
+      server: https://kubernetes.default.svc
+    - namespace: app3-prod
+      server: https://kubernetes.default.svc
+  description: prodelopment environment
