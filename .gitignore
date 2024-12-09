@@ -60,3 +60,5 @@ app1-code/*.out
 #applications/dev/*.yaml
 #applications/staging/*.yaml
 #applications/prod/*.yaml
+
+nohup.out

@@ -1,7 +1,0 @@
-# helm-charts/bookinfo/templates/namespace.yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: {{ .Release.Namespace }}
-  labels:
-    app: bookinfo

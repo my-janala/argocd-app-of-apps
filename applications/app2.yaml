@@ -1,22 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bookinfo-dev
+  name: app2
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/namespace: bookinfo-dev
 spec:
-  project: bookinfo-dev
+  project: default
   source:
     repoURL: https://github.com/my-janala/argocd-app-of-apps.git
     targetRevision: main
-    path: helm-charts/bookinfo/overlays/dev
+    path: manifests/app2
   destination:
     server: https://kubernetes.default.svc
-    namespace: bookinfo-dev
+    namespace: app2
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
