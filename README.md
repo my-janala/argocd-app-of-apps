@@ -259,6 +259,10 @@ root-app  https://kubernetes.default.svc  argocd     default  Synced  Healthy  A
 
 ```
 
+One can see the bootstrap root application and the child applications like the image below:
+
+![argocd-app-of-apps](./images/argocd-app-of-apps.png "argocd-app-of-apps")
+
 - **Namespace Verification**: Ensure each namespace is created:
 
 
