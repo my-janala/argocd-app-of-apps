@@ -133,7 +133,7 @@ You can use the following command to delete the cluster with _eksctl_:
 ```
 helm upgrade --install argocd argo-cd/argo-cd --version "7.7.7" \
   --namespace "argocd" --create-namespace \
-  --values ~/automation/gitops/argocd/values.yaml \
+  --values ./values.yaml \
   --wait
 ```
 

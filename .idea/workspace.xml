@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20b92646-c7de-41be-a9ac-e5a015d3f40d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/argocd-app-of-apps",
     "last_opened_file_path": "/Users/mezbaurrahman/IdeaProjects/capgemini/platform_engineering/projects/cis-cnk8s/sub-projects/gitops/argocd-app-of-apps",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
