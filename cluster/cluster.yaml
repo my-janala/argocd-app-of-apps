@@ -1,17 +1,17 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 availabilityZones:
-  - ${AWS_REGION}a
-  - ${AWS_REGION}b
-  - ${AWS_REGION}c
+  - us-east-1a
+  - us-east-1b
+  - us-east-1c
 metadata:
-  name: ${EKS_CLUSTER_NAME}
-  region: ${AWS_REGION}
+  name: eks-workshop
+  region: us-east-1
   version: "1.30"
   tags:
-    karpenter.sh/discovery: ${EKS_CLUSTER_NAME}
+    karpenter.sh/discovery: eks-workshop
     created-by: eks-workshop-v2
-    env: ${EKS_CLUSTER_NAME}
+    env: eks-workshop
 iam:
   withOIDC: true
 vpc:
@@ -22,7 +22,20 @@ vpc:
 addons:
   - name: vpc-cni
     version: 1.16.0
-    configurationValues: '{"env":{"ENABLE_PREFIX_DELEGATION":"true", "ENABLE_POD_ENI":"true", "POD_SECURITY_GROUP_ENFORCING_MODE":"standard"},"enableNetworkPolicy": "true", "nodeAgent": {"enablePolicyEventLogs": "true"}}'
+    configurationValues: '{
+      "env": {
+        "ENABLE_PREFIX_DELEGATION": "true",
+        "ENABLE_POD_ENI": "true",
+        "POD_SECURITY_GROUP_ENFORCING_MODE": "standard",
+        "WARM_ENI_TARGET": "1",
+        "WARM_IP_TARGET": "5",
+        "MINIMUM_IP_TARGET": "10"
+      },
+      "enableNetworkPolicy": "true",
+      "nodeAgent": {
+        "enablePolicyEventLogs": "true"
+      }
+    }'
     resolveConflicts: overwrite
 managedNodeGroups:
   - name: default
